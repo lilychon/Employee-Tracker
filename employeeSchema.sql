@@ -11,7 +11,7 @@ CREATE TABLE department(
 CREATE TABLE role(
   id INT NOT NULL AUTO_INCREMENT,
   title VARCHAR(30) NOT NULL,
-  salary DECIMAL(5,2),
+  salary DECIMAL,
   PRIMARY KEY (id),
   department_id INT,
   CONSTRAINT FK_RoleDepartment 
@@ -34,13 +34,13 @@ CREATE TABLE employees(
   PRIMARY KEY (id)
 );
 
-INSERT INTO employees (first_name, last_name, role_id)
-VALUES ("Lily", "Chon", 6), 
-("Jeff", "Lee", 1), 
-("James", "Moon", 3), 
-("Jane", "Kim", 4), 
-("Kate", "Jung", 5), 
-("Eugene", "Park", 2);
+INSERT INTO department (name)
+VALUES ("Unified Communication"), 
+("Infrastructure"), 
+("Networking"), 
+("Security"), 
+("Service Desk"), 
+("Applications");
 
 INSERT INTO role (title, salary, department_id)
 VALUES ("UC Engineer", 90, 1), 
@@ -50,10 +50,10 @@ VALUES ("UC Engineer", 90, 1),
 ("Service Desk Analyst", 60, 5), 
 ("Applications Analyst", 75, 6);
 
-INSERT INTO department (name)
-VALUES ("Unified Communication"), 
-("Infrastructure"), 
-("Networking"), 
-("Security"), 
-("Service Desk"), 
-("Applications");
+INSERT INTO employees (first_name, last_name, role_id)
+VALUES ("Lily", "Chon", 6), 
+("Jeff", "Lee", 1), 
+("James", "Moon", 3), 
+("Jane", "Kim", 4), 
+("Kate", "Jung", 5), 
+("Eugene", "Park", 2);
